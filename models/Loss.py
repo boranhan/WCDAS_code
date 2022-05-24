@@ -35,8 +35,8 @@ class WCDAS(CosLoss):
         assert target is not None
         self.gamma =  1 / (1 + torch.exp (-self.g))
         cosine = F.linear(F.normalize(input, p=2, dim=1), F.normalize(self.weight, p=2, dim=1), None) 
-        s = F.softplus(self.s_).add(1.0)
         logit =  1/2/3.14*(1-self.gamma**2)/(1+self.gamma**2-2*self.gamma*cosine)
+        s = F.softplus(self.s_).add(1.0)
         if self.s_trainable:
             logit = s * logit   
         else:

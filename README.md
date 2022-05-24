@@ -21,7 +21,7 @@ For iNaturalist-2018, the script to train from script is as follows:
 
 ```bash
 python main_train.py --dataset 'inat2018' --net-config ResNet50Feature --workers 12 --seed 0 --loss-config WCDAS_iNaturalist2018
-python main_finetune.py --dataset 'inat2018' --net-config ResNet50Feature_finetune --loss-config WCDAS_iNaturalist2018 --model-file ./results/imagenetlt_loss_WCDAS_iNaturalist2018_ResNet50Feature_lr_0.4_model/ --workers 12 --seed 0  
+python main_finetune.py --dataset 'inat2018' --net-config ResNet50Feature_finetune --loss-config WCDAS_iNaturalist2018 --model-file ./results/inat2018_loss_WCDAS_iNaturalist2018_ResNet50Feature_lr_0.4_model/ --workers 12 --seed 0  
 ```
 ## Results
 
@@ -31,16 +31,6 @@ python main_finetune.py --dataset 'inat2018' --net-config ResNet50Feature_finetu
 |---|---|---|
 | WCDAS | 44.5 | 71.8|
 
-## References
-
-[1] Bingyi Kang, Saining Xie, Marcus Rohrbach, Zhicheng Yan, Albert Gordo, Jiashi Feng and Yannis Kalantidis. "DECOUPLING REPRESENTATION AND CLASSIFIER FOR LONG-TAILED RECOGNITION." In ICLR, 2020.
-
-[2] Kaidi Cao, Colin Wei, Adrien Gaidon, Nikos Arechiga and Tengyu Ma. "Learning imbalanced datasets with label-distribution-aware margin loss." In NeurIPS, 2019.
-
-
-## Contact
-takumi.kobayashi (At) aist.go.jp
-
 
 ## Acknowledgement
-The class-wise sampler `utils/ClassAwareSampler.py` is from the [Classifier-Balancing](https://github.com/facebookresearch/classifier-balancing).
+The codes are modified based on [tvMF](https://github.com/tk1980/tvMF), [Classifier-Balancing](https://github.com/facebookresearch/classifier-balancing) and [BalancedMetaSoftmax-Classification](https://github.com/jiawei-ren/BalancedMetaSoftmax-Classification).
